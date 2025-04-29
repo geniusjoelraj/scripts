@@ -17,10 +17,13 @@ declare -A color_dict=(
 )
 color=$(echo $colors | rofi -sep ',' -dmenu)
 hexcode=${color_dict[$color]}
-echo "@define-color accent #$hexcode;" >"$HOME/.config/waybar/accent.css"
-echo "@define-color accent #$hexcode;" >"$HOME/.config/wlogout/accent.css"
+if [[ $color ]]; then
+  echo "@define-color accent #$hexcode;" >"$HOME/.config/waybar/accent.css"
+  echo "@define-color accent #$hexcode;" >"$HOME/.config/wlogout/accent.css"
 
-echo "general{ 
+  echo "general{ 
   col.active_border = rgba(${hexcode}ee)
   col.inactive_border = rgba(${hexcode}55)
 }" >"$HOME/.config/hypr/colors.conf"
+
+fi
