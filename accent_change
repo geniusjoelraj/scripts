@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 colors='rosewater,flamingo,pink,mauve,red,maroon,peach,yellow,green,teal,sky,sapphire,blue,lavender'
 declare -A color_dict=(
   [rosewater]="f5e0dc"
